@@ -1,45 +1,34 @@
-# REST API — Task Manager
+# REST API - Task Manager
 
-A simple CRUD REST API built with Node.js and Express. Manages a task list with full Create, Read, Update, Delete operations.
+## Overview
+A CRUD REST API built with Node.js and Express to practice backend routing, request validation, and API design.
+
+## Learning Outcomes
+- Implement RESTful endpoints for resource management
+- Validate request payloads and return proper status codes
+- Structure backend code for maintainability
 
 ## Endpoints
-
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/tasks` | Get all tasks (optional `?completed=true/false`) |
-| GET | `/api/tasks/:id` | Get a single task |
-| POST | `/api/tasks` | Create a new task |
-| PUT | `/api/tasks/:id` | Update title and/or completed status |
+| GET | `/api/tasks` | List all tasks (optional `?completed=true/false`) |
+| GET | `/api/tasks/:id` | Get one task |
+| POST | `/api/tasks` | Create a task |
+| PUT | `/api/tasks/:id` | Update task title/completed |
 | DELETE | `/api/tasks/:id` | Delete a task |
 
-## Setup & Run
-
+## Run Locally
 ```bash
-# Install dependencies
 npm install
-
-# Start server (production)
-npm start
-
-# Start with auto-reload (development)
 npm run dev
 ```
 
-Server runs on `http://localhost:3000`
+Server: `http://localhost:3000`
 
-## Example Requests
+## Common Mistakes
+- Not validating missing `title` fields on create
+- Returning inconsistent status codes
 
-**Create a task:**
-```json
-POST /api/tasks
-{ "title": "Learn Node.js" }
-```
-
-**Update a task:**
-```json
-PUT /api/tasks/1
-{ "completed": true }
-```
-
-## Tech Stack
-Node.js · Express.js
+## Next Improvements
+- Add persistent database support
+- Add authentication and protected routes
